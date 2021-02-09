@@ -25,6 +25,7 @@
 
 const yelling = words => {
   // Your code here
+  return words.map(word => word.toUpperCase())
 }
 
 /**
@@ -38,7 +39,10 @@ const yelling = words => {
  */
 
 // ...
-
+// const newNumber = doubleTrouble.map(newNumber * 2)
+const doubleTrouble = numbers => {
+  return numbers.map(number => number * 2)
+}
 /*
  * 3) Define a function stringyIndexes() that takes an array of
  * strings as an argument and returns a new array with each string
@@ -49,6 +53,12 @@ const yelling = words => {
  */
 
 // ...
+// var stringyWords = words.Select((word, index) => $"{word} is at index {index}");
+
+// return stringyWords;
+const stringyIndexes = words => {
+  return words.map((word, index) => `${word} is at index ${index}`)
+}
 
 /*
  * 4) Define a function onlyTheEvenSurvive that accepts an array of
@@ -59,6 +69,12 @@ const yelling = words => {
  */
 
 // ...
+// C# Example
+// var evenNumbers = numbers.Where(number => number % 2 == 0);
+// return evenNumbers;
+const onlyTheEvenSurvive = numbers => {
+  return numbers.filter(number => number % 2 == 0)
+}
 
 /*
  * 5) Define a function onlyTheEvenIndexedSurvive that accepts an array of
@@ -69,6 +85,11 @@ const yelling = words => {
  */
 
 // ...
+// var listOfNumbers = numbers.Where((numbers, index) => index % 2 == 0);
+// return listOfNumbers;
+const onlyTheEvenIndexedSurvive = numbers => {
+  return numbers.filter((numbers, index) => index % 2 == 0)
+}
 
 /*
  * 6)  Define a function bestMoviesOfTheYear that accepts an array of
@@ -88,6 +109,12 @@ const yelling = words => {
  */
 
 // ...
+// var popularMovieInOneLine = movies.Where(movie => movie.Score >= 90 && movie.Year == yearToMatch).Select(movies => movies.Name);
+// return popularMovieInOneLine;
+
+const bestMoviesOfTheYear = movies => {
+  return movies.every(movie => (movie.score >= 90).every(movie.year == year))
+}
 
 /*
  * 7) Define a function everyoneIsOdd that accepts an array of
@@ -99,7 +126,11 @@ const yelling = words => {
  */
 
 // ...
-
+// var allOddNumbers = numbers.All(number => number % 2 != 0);
+// return allOddNumbers;
+const everyoneIsOdd = numbers => {
+  return numbers.every(number => number % 2 != 0)
+}
 /*
  * 8) Define a function findTheNeedle that accepts an array of
  * strings and returns the one string that contains the word
@@ -110,6 +141,11 @@ const yelling = words => {
  */
 
 // ...
+// var specificWord = sentences.First(sentence => sentence.Contains("needle"));
+//             return specificWord;
+const findTheNeedle = sentences => {
+  return sentences.find(sentence => sentence.filter('needle'))
+}
 
 /*
  * 9) Define a function findTheNeedleIndex that accepts an array of
@@ -121,6 +157,11 @@ const yelling = words => {
  */
 
 // ...
+// var insideWord = sentences.FindIndex(sentence => sentence.Contains("needle"));
+//             return insideWord;
+const findTheNeedleIndex = sentences => {
+  return sentences.findIndex(sentence => sentence.filter('needle'))
+}
 
 /*
  *` 10)  Define a function someoneToLove that accepts an array of
@@ -132,6 +173,11 @@ const yelling = words => {
  */
 
 // ...
+// var someoneToLoveWord = words.Any(word => word.Length == 4);
+// return someoneToLoveWord;
+const someoneToLove = words => {
+  return words.length(word => word == 4)
+}
 
 /*
  * 11)  Define a function objectKeys that accepts an object of
