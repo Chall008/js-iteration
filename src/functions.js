@@ -112,8 +112,10 @@ const onlyTheEvenIndexedSurvive = numbers => {
 // var popularMovieInOneLine = movies.Where(movie => movie.Score >= 90 && movie.Year == yearToMatch).Select(movies => movies.Name);
 // return popularMovieInOneLine;
 
-const bestMoviesOfTheYear = movies => {
-  return movies.every(movie => (movie.score >= 90).every(movie.year == year))
+const bestMoviesOfTheYear = (movies, year) => {
+  return movies
+    .filter(movie => movie.score >= 90 && movie.year === year)
+    .map(movie => movie.name)
 }
 
 /*
@@ -144,7 +146,7 @@ const everyoneIsOdd = numbers => {
 // var specificWord = sentences.First(sentence => sentence.Contains("needle"));
 //             return specificWord;
 const findTheNeedle = sentences => {
-  return sentences.find(sentence => sentence.filter('needle'))
+  return sentences.find(sentence => sentence.includes('needle'))
 }
 
 /*
@@ -160,7 +162,7 @@ const findTheNeedle = sentences => {
 // var insideWord = sentences.FindIndex(sentence => sentence.Contains("needle"));
 //             return insideWord;
 const findTheNeedleIndex = sentences => {
-  return sentences.findIndex(sentence => sentence.filter('needle'))
+  return sentences.findIndex(sentence => sentence.includes('needle'))
 }
 
 /*
@@ -176,7 +178,7 @@ const findTheNeedleIndex = sentences => {
 // var someoneToLoveWord = words.Any(word => word.Length == 4);
 // return someoneToLoveWord;
 const someoneToLove = words => {
-  return words.length(word => word == 4)
+  return words.some(word => word.length === 4)
 }
 
 /*
@@ -217,7 +219,7 @@ const someoneToLove = words => {
 // }
 
 // ...
-
+// const answer = object.entires(myHobbies).map(([key, value]) => `${key.title}`)
 /**
  * NOTE: Don't modify anything below this line...
  *
